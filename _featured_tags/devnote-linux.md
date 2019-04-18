@@ -4,6 +4,6 @@ title: Linux
 slug: linux
 category: devnote
 menu: false
-order: 1
+order: 2
 header-img: "/img/linux-logo.png"
 ---
