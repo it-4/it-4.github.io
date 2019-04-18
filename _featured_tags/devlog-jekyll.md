@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Jekyll
 slug: jekyll
-category: devlog
+category: devnote
 menu: false
-order: 3
+order: 2
 ---

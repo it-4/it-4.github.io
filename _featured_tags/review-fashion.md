@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Tip
-slug: tip
-category: tip
+title: Fashion
+slug: fashion
+category: daily
 menu: false
 order: 1
 ---
