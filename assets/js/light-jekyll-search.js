@@ -63,15 +63,6 @@ var lightJekyllSearch = {
     enableSuggestion : function()
     {
         document.getElementById('light-jekyll-search-suggestion').style.display = '';
-        $("light-jekyll-search-suggestion").css({
-        	"background-color": "white",
-	        "z-index": "1",
-	        "position": "absolute",
-	        "margin-top": "10px",
-	        "color": "black",
-	        "border-style": "ridge",
-	        "width": "100%"
-        });
     },
     disableSuggestion : function()
     {
@@ -99,19 +90,19 @@ var lightJekyllSearch = {
             suggestionNode = document.getElementById('light-jekyll-search-suggestion');
 
         if ( suggestionNode === null ) {
-            suggestionHtml += '<div id="light-jekyll-search-suggestion">';
+            suggestionHtml += '<div id="light-jekyll-search-suggestion" style="background-color:white; z-index:1; position:absolute; margin-top:10px; color:black; border-style:ridge; width:100%;">';
         } else {
             suggestionNode.innerHTML = ''
         }
 
-        suggestionHtml += '<p class="found_results_n">';
+        suggestionHtml += '<p class="found_results_n" style="color:black;">';
         suggestionHtml += related.length.toString() + 'Result(s) found';
         suggestionHtml += '</p>';
 
-        suggestionHtml += '<ul>';
+        suggestionHtml += '<ul style="color:black;">';
         for ( var i = 0; i < related.length; i++ ) {
             suggestionHtml += '<li>';
-            suggestionHtml += '<a href="'+ related[i].url +'">';
+            suggestionHtml += '<a href="'+ related[i].url +'" style="color:black;">';
             suggestionHtml += related[i].title;
             suggestionHtml += '</a>';
             suggestionHtml += '</li>';
