@@ -7,7 +7,14 @@
         <h1><a id="_title" href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         {{ site.tagline | truncatewords:50 | markdownify }}
       </div>
-
+		<script type="text/javascript" src="/_includes/scripts/light-jekyll-search.js"></script>
+		<script type="text/javascript">
+	      	lightJekyllSearch.search({
+	          	el : document.querySelector('form[name="search"] input[name="q"]'),
+	          	placeholder : '검색어를 입력해주세요.',
+	          	postJsonPath : '/assets/posts.json'
+			});
+		</script>
       <br/>
       <br/>
       <nav class="sidebar-nav heading" role="navigation">
