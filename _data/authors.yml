@@ -9,6 +9,7 @@ it-4:
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
     Development is like Lego.
+    The fun of what to make and the sense of achievement after it is made.
 
   # This photo will be used in the about section
   picture:
