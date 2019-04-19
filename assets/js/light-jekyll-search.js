@@ -96,7 +96,7 @@ var lightJekyllSearch = {
         }
 
         suggestionHtml += '<p class="found_results_n" style="color:black;">';
-        suggestionHtml += related.length.toString() + 'Result(s) found';
+        suggestionHtml += ' ' + related.length.toString() + ' Result(s) found';
         suggestionHtml += '</p>';
 
         suggestionHtml += '<ul style="color:black;">';
