@@ -63,6 +63,15 @@ var lightJekyllSearch = {
     enableSuggestion : function()
     {
         document.getElementById('light-jekyll-search-suggestion').style.display = '';
+        $("light-jekyll-search-suggestion").css({
+        	"background-color": "white",
+	        "z-index": "1",
+	        "position": "absolute",
+	        "margin-top": "10px",
+	        "color": "black",
+	        "border-style": "ridge",
+	        "width": "100%"
+        });
     },
     disableSuggestion : function()
     {
