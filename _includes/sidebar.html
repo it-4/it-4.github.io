@@ -18,7 +18,9 @@
         {{ site.tagline | truncatewords:50 | markdownify }}
       </div>
       	<form id="search" name="search">
-      		<input type="text" name="q" id="q" value="" class="search"/>
+      		<div>
+      			<img src="/assets/img/search_img.jpeg"/><input type="text" name="q" id="q" value="" class="search"/>
+      		</div>
 			{% include search.html %}
 		</form>
       <br/>
