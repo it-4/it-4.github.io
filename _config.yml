@@ -19,6 +19,7 @@ tagline:             Development is like Lego.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
   <center>Always Positively</center>
+  <a class="sidebar-nav-item" href="/write/">글쓰기</a>
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
