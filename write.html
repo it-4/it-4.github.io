@@ -14,20 +14,7 @@ layout: base
     </div>
   </div>
   <div class="markdown-body">
-  	<select id="categoryy">
-  	{% assign pages = site.pages %}
 
-  {% for document in site.documents %}
-    {% assign pages = pages | push: document %}
-  {% endfor %}
-
-  {% assign subpages = pages | where: "menu", false | sort: "order" %}
-  {% assign pages = pages | where: "menu", true | sort: "order" %}
-  {% assign count = 0%}
-  {% for node in pages %}
-  {% assign count = count | plus: 1 %}
-  		<option>{{ node.title }}</option>
-  	</select>
   	<textarea rows="35" cols="90" id="postContent">
 ㅁㄴㅇ
   	</textarea>
