@@ -115,7 +115,7 @@ function leadingZeros(n, digits) {
 }
 
 function createSource() {
-	var resCtt = "---\nlayout: post\ntitle: \"제목을 입력해주세요\"\ndate: " + getTimeStamp() + "\ncategories: " + document.getElementById("categoryy").value.toLowerCase() + "\ntags: " + document.getElementById("tagg").value + "\n---\n\n 내용을 입력해주세요.";
+	var resCtt = "---\nlayout: post\ntitle: '제목을 입력해주세요'\ndate: " + getTimeStamp() + "\ncategories: " + document.getElementById("categoryy").value.toLowerCase() + "\ntags: " + document.getElementById("tagg").value + "\n---\n\n 내용을 입력해주세요.";
 	document.getElementById("postContent").value = resCtt;
 	document.getElementById("postContent").style.display = "";
 }
