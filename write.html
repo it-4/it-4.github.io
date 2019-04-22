@@ -15,6 +15,7 @@ layout: base
   </div>
   <div class="markdown-body">
   	<select id="categoryy" onclick="changeCategory()">
+  		<option value="">선택</option>
   	{% assign pages = site.pages %}
 
   {% for document in site.documents %}
@@ -33,6 +34,12 @@ layout: base
 function changeCategory() {
 	var resVal = document.getElementById("categoryy").value;
 	var objSel = document.getElementById("tagg");
+
+	for(i=0; i<objSel.options.length; i++) {
+		objSel.options[i] = null;
+	}
+	objSel.options.length = 0;
+
 	if( resVal == "Daily" ) {
 		var optVal = document.createElement("option");
 		optVal.text = "fashion";
