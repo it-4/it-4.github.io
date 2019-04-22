@@ -67,6 +67,11 @@ function changeCategory() {
 	objSel.options.length = 0;
 
 	if( resVal == "Daily" ) {
+		var optVal5 = document.createElement("option");
+		optVal5.text = "선택";
+		optVal5.value = "";
+		objSel.options.add(optVal5);
+
 		var optVal = document.createElement("option");
 		optVal.text = "fashion";
 		optVal.value = "fashion";
@@ -88,6 +93,11 @@ function changeCategory() {
 		objSel.options.add(optVal4);
 
 	} else if( resVal == "DevNote" ) {
+		var optVal5 = document.createElement("option");
+		optVal5.text = "선택";
+		optVal5.value = "";
+		objSel.options.add(optVal5);
+
 		var optVal = document.createElement("option");
 		optVal.text = "jekyll";
 		optVal.value = "jekyll";
@@ -101,6 +111,7 @@ function changeCategory() {
 }
 </script>
   	<select class="selectBox" id="tagg">
+  		<option>선택</option>
   	</select>
 
   	<button class="downloadBtn" onclick="createSource()">생성하기</button>
