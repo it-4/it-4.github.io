@@ -122,5 +122,26 @@ function createSource() {
 </script>
   	<textarea rows="35" cols="90" id="postContent" style="display: none;">
   	</textarea>
-  	<!-- <button onclick="saveToFile_Chrome()">파일로 저장</button> -->
+  	<button onclick="saveToFile_Chrome()">파일로 저장</button>
   </div>
+<script type="text/javascript">
+function saveToFile_Chrome() {
+	var fileName = getTimeStamp2() + "-제목을 입력해주세요.markdown";
+	var content = document.getElementById("postContent").value;
+    var blob = new Blob([content], { type: 'text/plain' });
+
+    objURL = window.URL.createObjectURL(blob);
+
+    // 이전에 생성된 메모리 해제
+    if (window.__Xr_objURL_forCreatingFile__) {
+        window.URL.revokeObjectURL(window.__Xr_objURL_forCreatingFile__);
+    }
+    window.__Xr_objURL_forCreatingFile__ = objURL;
+
+    var a = document.createElement('a');
+
+    a.download = fileName;
+    a.href = objURL;
+    a.click();
+}
+</script>
