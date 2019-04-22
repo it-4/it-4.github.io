@@ -32,15 +32,21 @@ layout: base
 <script type="text/javascript">
 function changeCategory() {
 	var resVal = document.getElementById("categoryy").value;
-	{% assign resVal = resVal %}
+	var optVal;
+	if( resVal == "daily" ) {
+		optVal += '<option>fashion</option>'
+				+ '<option>food</option>'
+				+ '<option>movie</option>'
+				+ '<option>book</option>';
+		document.getElementById("tagg").append(optVal);
+	} else if( resVal == "devnote" ) {
+		optVal += '<option>jekyll</option>'
+			+ '<option>linux</option>';
+		document.getElementById("tagg").append(optVal);
+	}
 }
 </script>
   	<select id="tagg">
-  	{% for subnode in subpages %}
-  		{% if subnode.category == resVal %}
-  		<option>{{ subnode.title }}</option>
-  		{% endif %}
-	{% endfor %}
   	</select>
 
   	<textarea rows="35" cols="90" id="postContent">
