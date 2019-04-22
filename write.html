@@ -79,8 +79,33 @@ function changeCategory() {
 
   	<button onclick="createSource()">생성하기</button>
 <script type="text/javascript">
+function getTimeStamp() {
+  var d = new Date();
+  var s =
+    leadingZeros(d.getFullYear(), 4) + '-' +
+    leadingZeros(d.getMonth() + 1, 2) + '-' +
+    leadingZeros(d.getDate(), 2) + ' ' +
+
+    leadingZeros(d.getHours(), 2) + ':' +
+    leadingZeros(d.getMinutes(), 2) + ':' +
+    leadingZeros(d.getSeconds(), 2);
+
+  return s;
+}
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
 function createSource() {
-	var resCtt = "---\nlayout: post\ntitle='제목을 입력해주세요'\ncategories:" + document.getElementById("categoryy").value + "\n---";
+	var resCtt = "---\nlayout: post\ntitle='제목을 입력해주세요'\ndate:" + getTimeStamp() + "categories: " + document.getElementById("categoryy").value + "\ntags: " + document.getElementById("tagg").value + "\n---\n\n 내용을 입력해주세요.";
 	document.getElementById("postContent").value = resCtt;
 	document.getElementById("postContent").style.display = "";
 }
