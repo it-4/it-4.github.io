@@ -77,7 +77,14 @@ function changeCategory() {
   	<select id="tagg">
   	</select>
 
-  	<textarea rows="35" cols="90" id="postContent">
-ㅁㄴㅇ
+  	<button onclick="createSource()">생성하기</button>
+<script type="text/javascript">
+function createSource() {
+	var resCtt = "---\nlayout: post\ntitle='제목을 입력해주세요'\ncategories:" + document.getElementById("categoryy").value + "\n---";
+	document.getElementById("postContent").value = resCtt;
+	document.getElementById("postContent").style.display = "";
+}
+</script>
+  	<textarea rows="35" cols="90" id="postContent" style="display: none;">
   	</textarea>
   </div>
