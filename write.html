@@ -32,17 +32,38 @@ layout: base
 <script type="text/javascript">
 function changeCategory() {
 	var resVal = document.getElementById("categoryy").value;
-	var optVal;
+	var objSel = document.getElementById("tagg");
 	if( resVal == "Daily" ) {
-		optVal = '<option>fashion</option>'
-				+ '<option>food</option>'
-				+ '<option>movie</option>'
-				+ '<option>book</option>';
-		document.getElementById("tagg").append(optVal);
+		var optVal = document.createElement("option");
+		optVal.text = "fashion";
+		optVal.value = "fashion"
+		objSel.options.add(optVal);
+
+		var optVal2 = document.createElement("option");
+		optVal2.text = "food";
+		optVal2.value = "food"
+		objSel.options.add(optVal2);
+
+		var optVal3 = document.createElement("option");
+		optVal3.text = "movie";
+		optVal3.value = "movie"
+		objSel.options.add(optVal3);
+
+		var optVal4 = document.createElement("option");
+		optVal4.text = "book";
+		optVal4.value = "book"
+		objSel.options.add(optVal4);
+
 	} else if( resVal == "DevNote" ) {
-		optVal = '<option>jekyll</option>'
-			+ '<option>linux</option>';
-		document.getElementById("tagg").append(optVal);
+		var optVal = document.createElement("option");
+		optVal.text = "jekyll";
+		optVal.value = "jekyll"
+		objSel.options.add(optVal);
+
+		var optVal2 = document.createElement("option");
+		optVal2.text = "linux";
+		optVal2.value = "linux"
+		objSel.options.add(optVal2);
 	}
 }
 </script>
