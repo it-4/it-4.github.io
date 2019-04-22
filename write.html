@@ -3,7 +3,33 @@ layout: base
 ---
 
 {% assign author = site.data.authors[page.author] | default:site.data.authors.first[1] %}
-
+<style>
+.downloadBtn {
+	width: 20%;
+    font-weight: normal;
+    display: inline-block;
+    line-height: 1.75;
+    padding: .25rem 0;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: lightsalmon;
+}
+.fileName {
+	width: 70%;
+    font-weight: normal;
+    display: inline-block;
+    line-height: 1.75;
+    padding: .25rem 0;
+    margin-bottom: 10px;
+}
+.selectBox {
+	width: 15%;
+    font-weight: normal;
+    display: inline-block;
+    line-height: 1.75;
+    padding: .25rem 0;
+    margin-bottom: 10px;
+}
+</style>
   <div class="author-body">
 
   {% if author.picture %}
@@ -14,7 +40,7 @@ layout: base
     </div>
   </div>
   <div class="markdown-body">
-  	<select id="categoryy" onclick="changeCategory()">
+  	<select class="selectBox" id="categoryy" onclick="changeCategory()">
   		<option value="">선택</option>
   	{% assign pages = site.pages %}
 
@@ -74,10 +100,10 @@ function changeCategory() {
 	}
 }
 </script>
-  	<select id="tagg">
+  	<select class="selectBox" id="tagg">
   	</select>
 
-  	<button onclick="createSource()">생성하기</button>
+  	<button class="downloadBtn" onclick="createSource()">생성하기</button>
 <script type="text/javascript">
 function getTimeStamp() {
   var d = new Date();
@@ -124,7 +150,7 @@ function createSource() {
 	<form id="contentForm" onsubmit="download(this['name'].value, this['text'].value)" style="display: none;">
 	  <input type="text" id="fileName" name="name" value="">
 	  <textarea name="text" rows="35" cols="90" id="postContent"></textarea>
-	  <input type="submit" value="Download">
+	  <div align="center"><input class="downloadBtn" type="submit" value="Download"></div>
 	</form>
   </div>
 <script type="text/javascript">
