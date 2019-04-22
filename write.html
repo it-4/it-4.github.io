@@ -27,14 +27,18 @@ layout: base
   {% for node in pages %}
   {% assign count = count | plus: 1 %}
   		<option>{{ node.title }}</option>
-  {% endfor %}
+
   	</select>
+  	{% if node.submenu %}
   	<select id="tagg">
   	{% for subnode in subpages %}
+  		{% if subnode.category == node.slug %}
   		<option>{{ subnode.title }}</option>
+  		{% endif %}
   	{% endfor %}
   	</select>
-
+	{% endif %}
+	{% endfor %}
   	<textarea rows="35" cols="90" id="postContent">
 ㅁㄴㅇ
   	</textarea>
