@@ -117,26 +117,26 @@ function leadingZeros(n, digits) {
 function createSource() {
 	var resCtt = "---\nlayout: post\ntitle: \"제목을 입력해주세요\"\ndate: " + getTimeStamp() + "\ncategories: " + document.getElementById("categoryy").value.toLowerCase() + "\ntags: " + document.getElementById("tagg").value + "\n---\n\n 내용을 입력해주세요.";
 	document.getElementById("postContent").value = resCtt;
-	document.getElementById("postContent").style.display = "";
-	document.getElementById("saveBtn").style.display = "";
+	document.getElementById("contentForm").style.display = "";
 }
 </script>
-  	<textarea rows="35" cols="90" id="postContent" style="display: none;">
-  	</textarea>
-  	<button id="saveBtn" onclick="saveToFile_Chrome()" style="display: none;">파일로 저장</button>
+	<form id="contentForm" onsubmit="download(this['name'].value, this['text'].value)" style="display: none;">
+	  <input type="text" name="name" value="test.txt">
+	  <textarea name="text" rows="35" cols="90" id="postContent"></textarea>
+	  <input type="submit" value="Download">
+	</form>
   </div>
 <script type="text/javascript">
-function saveToFile_Chrome() {
-	var fso = new ActiveXObject("Scripting.FileSystemObject");
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
 
-	var s = fso.CreateTextFile("C:\\"+ getTimeStamp2 +"-제목.markdown", true);
+  element.style.display = 'none';
+  document.body.appendChild(element);
 
-	var text = document.getElementById("postContent").innerText;
+  element.click();
 
-	s.WriteLine(text);
-
-	s.WriteLine('***********************');
-
-	s.Close();
+  document.body.removeChild(element);
 }
 </script>
