@@ -34,13 +34,13 @@ function changeCategory() {
 	var resVal = document.getElementById("categoryy").value;
 	var optVal;
 	if( resVal == "daily" ) {
-		optVal += '<option>fashion</option>'
+		optVal = '<option>fashion</option>'
 				+ '<option>food</option>'
 				+ '<option>movie</option>'
 				+ '<option>book</option>';
 		document.getElementById("tagg").append(optVal);
 	} else if( resVal == "devnote" ) {
-		optVal += '<option>jekyll</option>'
+		optVal = '<option>jekyll</option>'
 			+ '<option>linux</option>';
 		document.getElementById("tagg").append(optVal);
 	}
