@@ -117,12 +117,12 @@ function leadingZeros(n, digits) {
 function createSource() {
 	var resCtt = "---\nlayout: post\ntitle: \"제목을 입력해주세요\"\ndate: " + getTimeStamp() + "\ncategories: " + document.getElementById("categoryy").value.toLowerCase() + "\ntags: " + document.getElementById("tagg").value + "\n---\n\n 내용을 입력해주세요.";
 	document.getElementById("postContent").value = resCtt;
-	document.getElementById("contentForm").value = getTimeStamp2() + "-제목.markdown";
+	document.getElementById("fileName").value = getTimeStamp2() + "-제목.markdown";
 	document.getElementById("contentForm").style.display = "";
 }
 </script>
 	<form id="contentForm" onsubmit="download(this['name'].value, this['text'].value)" style="display: none;">
-	  <input type="text" name="name" value="">
+	  <input type="text" id="fileName" name="name" value="">
 	  <textarea name="text" rows="35" cols="90" id="postContent"></textarea>
 	  <input type="submit" value="Download">
 	</form>
