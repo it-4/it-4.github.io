@@ -118,30 +118,25 @@ function createSource() {
 	var resCtt = "---\nlayout: post\ntitle: \"제목을 입력해주세요\"\ndate: " + getTimeStamp() + "\ncategories: " + document.getElementById("categoryy").value.toLowerCase() + "\ntags: " + document.getElementById("tagg").value + "\n---\n\n 내용을 입력해주세요.";
 	document.getElementById("postContent").value = resCtt;
 	document.getElementById("postContent").style.display = "";
+	document.getElementById("saveBtn").style.display = "";
 }
 </script>
   	<textarea rows="35" cols="90" id="postContent" style="display: none;">
   	</textarea>
-  	<button onclick="saveToFile_Chrome()">파일로 저장</button>
+  	<button id="saveBtn" onclick="saveToFile_Chrome()" style="display: none;">파일로 저장</button>
   </div>
 <script type="text/javascript">
 function saveToFile_Chrome() {
-	var fileName = getTimeStamp2() + "-제목을 입력해주세요.markdown";
-	var content = document.getElementById("postContent").value;
-    var blob = new Blob([content], { type: 'text/plain' });
+	var fso = new ActiveXObject("Scripting.FileSystemObject");
 
-    objURL = window.URL.createObjectURL(blob);
+	var s = fso.CreateTextFile("C:\\"+ getTimeStamp2 +"-제목.markdown", true);
 
-    // 이전에 생성된 메모리 해제
-    if (window.__Xr_objURL_forCreatingFile__) {
-        window.URL.revokeObjectURL(window.__Xr_objURL_forCreatingFile__);
-    }
-    window.__Xr_objURL_forCreatingFile__ = objURL;
+	var text = document.getElementById("postContent").innerText;
 
-    var a = document.createElement('a');
+	s.WriteLine(text);
 
-    a.download = fileName;
-    a.href = objURL;
-    a.click();
+	s.WriteLine('***********************');
+
+	s.Close();
 }
 </script>
