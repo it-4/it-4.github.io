@@ -13,7 +13,7 @@ layout: base
     border: 1px solid rgba(255,255,255,0.2);
     background-color: lightsalmon;
 }
-.fileName {
+.fileNm {
 	width: 70%;
     font-weight: normal;
     display: inline-block;
@@ -159,7 +159,7 @@ function createSource() {
 }
 </script>
 	<form id="contentForm" onsubmit="download(this['name'].value, this['text'].value)" style="display: none;">
-	  <input type="text" id="fileName" name="name" value="">
+	  <input class="fileNm" type="text" id="fileName" name="name" value="">
 	  <textarea name="text" rows="35" cols="90" id="postContent"></textarea>
 	  <div align="center"><input class="downloadBtn" type="submit" value="Download"></div>
 	</form>
