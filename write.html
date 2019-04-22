@@ -31,14 +31,10 @@ layout: base
   	</select>
 
   	<select id="tagg">
-  	{% for node in pages %}
-  	{% if node.submenu %}
   	{% for subnode in subpages %}
-  		{% if subnode.category == node.slug %}
+  		{% if subnode.category == document.getElementById("categoryy").value %}
   		<option>{{ subnode.title }}</option>
   		{% endif %}
-  	{% endfor %}
-  	{% endif %}
 	{% endfor %}
   	</select>
 
