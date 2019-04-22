@@ -14,7 +14,7 @@ layout: base
     </div>
   </div>
   <div class="markdown-body">
-  	<select id="categoryy">
+  	<select id="categoryy" onchange="changeCategory()">
   	{% assign pages = site.pages %}
 
   {% for document in site.documents %}
@@ -29,10 +29,15 @@ layout: base
   		<option>{{ node.title }}</option>
   {% endfor %}
   	</select>
-
+<script type="text/javascript">
+function changeCategory() {
+	var resVal = document.getElementById("categoryy").value;
+	{% assign resVal = resVal %}
+}
+</script>
   	<select id="tagg">
   	{% for subnode in subpages %}
-  		{% if subnode.category == document.getElementById("categoryy").value %}
+  		{% if subnode.category == resVal %}
   		<option>{{ subnode.title }}</option>
   		{% endif %}
 	{% endfor %}
