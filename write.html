@@ -33,13 +33,13 @@ layout: base
 function changeCategory() {
 	var resVal = document.getElementById("categoryy").value;
 	var optVal;
-	if( resVal == "daily" ) {
+	if( resVal == "Daily" ) {
 		optVal = '<option>fashion</option>'
 				+ '<option>food</option>'
 				+ '<option>movie</option>'
 				+ '<option>book</option>';
 		document.getElementById("tagg").append(optVal);
-	} else if( resVal == "devnote" ) {
+	} else if( resVal == "DevNote" ) {
 		optVal = '<option>jekyll</option>'
 			+ '<option>linux</option>';
 		document.getElementById("tagg").append(optVal);
